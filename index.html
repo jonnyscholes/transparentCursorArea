@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    /* Minimum css to work */
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0px;
+      padding: 0px;
+      pointer-events: all;
+      min-height: 100%;
+    }
+
+    #cover,
+    #outline {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    #cover {
+      opacity: 0.5;
+      z-index: 2;
+    }
+    #outline {
+      z-index: 3;
+    }
+
+    /* Make look pretty */
+    #tooltip {
+      background: #fff;
+      position: absolute;
+      min-width: 100px;
+      max-width: 350px;
+      height: 100px;
+      top: 0;
+      display: none;
+      z-index: 4;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 0 10px 10px 0;
+    }
+    .marker {
+      position: absolute;
+      z-index: 10;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.8);
+    }
+    .marker:hover {
+      opacity: 0.5;
+    }
+    body {
+      color: #777;
+      font-family: sans-serif;
+      background: transparent url('images/1.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+  <script src="js/windowOverlay.js"></script>
+</head>
+<body>
+  <canvas id="outline"></canvas>
+  <canvas id="cover"></canvas>
+  <span id="tooltip"></span>
+
+  <a class="marker" style="top:45%;left:25%" href="#" data-tooltip="Pretty sky!"></a>
+  <a class="marker" style="top:80%;left:55%;" href="#" data-tooltip="There are some really pretty trees down here, but its too dark. Shame. You'll just have to come to Hobart!"></a>
+  <a class="marker" style="top:34%;left:67%;" href="#" data-tooltip="Crane has gone to sleep for the night. Slacker."></a>
+
+<script>windowOverlay.create(50, 'rgb(0,0,0)', 10, 'rgb(255,255,255)');</script>
+</body>
+</html>
